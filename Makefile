@@ -6,20 +6,20 @@
 #    By: ymehlil <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/17 09:59:39 by ymehlil           #+#    #+#              #
-#    Updated: 2023/03/17 10:00:52 by ymehlil          ###   ########.fr        #
+#    Updated: 2023/03/19 18:44:24 by ymehlil          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= minishell
 
-SRCS	= minishell.c
+SRCS	= minishell.c dark_split.c parse.c tokenisation.c dark_split_token.c utils_token.c
 
 SRCSD	= srcs/
 
 OBJSD	= objs/
 
 GNL_PATH	= get_next_line/
-GNL_SRCS	= get_next_line.c get_next_line_utils.c
+GNL_SRCS	= get_next_line.c get_next_line_utils.c 
 GNL_OBJS	= $(addprefix $(OBJSD), $(GNL_SRCS:.c=.o))
 OBJS	= $(addprefix $(OBJSD), $(SRCS:.c=.o))
 
@@ -29,6 +29,7 @@ PRINTF_A = ft_printf/libftprintf.a
 CC = cc -c -o
 LINKER = cc -o 
 FLAGS = -Wall -Wextra -Werror
+LIB =  -L/usr/include -lreadline
 
 all: $(NAME)
 	
@@ -38,8 +39,8 @@ $(LIBFT_A):
 $(PRINTF_A):
 	make -C ft_printf
 
-$(NAME): $(OBJS) $(PRINTF_A) $(GNL_OBJS) $(LIBFT_A)
-	$(LINKER) $@ $^
+$(NAME): $(OBJS) $(PRINTF_A) $(GNL_OBJS) $(LIBFT_A) 
+	$(LINKER) $@ $^ $(LIB)
 
 $(OBJSD)%.o: $(SRCSD)%.c
 	mkdir -p $(OBJSD)

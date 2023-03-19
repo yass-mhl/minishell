@@ -6,7 +6,7 @@
 /*   By: ymehlil <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 17:34:51 by ymehlil           #+#    #+#             */
-/*   Updated: 2022/11/10 17:09:16 by ymehlil          ###   ########.fr       */
+/*   Updated: 2023/03/19 18:28:57 by ymehlil          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+char	**ft_error(char **split, int word);
 int		ft_atoi(const char *str);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
@@ -31,6 +32,7 @@ int		ft_isascii(int c);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
