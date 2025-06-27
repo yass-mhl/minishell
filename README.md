@@ -67,3 +67,7 @@ See the subject for the full list.
 - [@yass-mhl](https://www.github.com/yass-mhl)
 - [@iamgrg](https://www.github.com/iamgrg)
 
+## 🗂️ Subject
+
+[📄 View the subject (PDF)](./en.subject.minishell.pdf)
+
